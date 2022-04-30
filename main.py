@@ -43,10 +43,10 @@ async def on_message(message):
         elif statement[1].lower() == "help":
             await message.channel.send(
                 """
-                You can try our news module:
-                - `@jitter_bot news <URL>`
-                - `@jitter_bot news website <Website_Url>`
-                - `@jitter_bot take-note` to have jitter bot record the convo then run `@jitter_bot parse-note` then `@jitter_bot note-summary` to get the summary of notes
+You can try our news module:
+`@jitter_bot news <URL>`
+`@jitter_bot news website <Website_Url>`
+`@jitter_bot take-note` to have jitter bot record the convo then run `@jitter_bot parse-note` then `@jitter_bot note-summary` to get the summary of notes.
                 """
             )
         elif statement[1].lower() == "news":
@@ -85,6 +85,4 @@ async def on_message(message):
             await message.channel.send(
                 "I don't understand that command. Run `@jitter_bot help` for some commands."
             )
-
-
-client.run(DISCORD_TOKEN)
+client.run(os.environ.get("DISCORD_TOKEN", ""))
